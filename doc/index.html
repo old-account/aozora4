@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Aozora - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/aozora/base.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-titles">::titles</a>
+    
+    <li><a href="#method-i-alpha">#alpha</a>
+    
+    <li><a href="#method-i-digit">#digit</a>
+    
+    <li><a href="#method-i-dots">#dots</a>
+    
+    <li><a href="#method-i-paragraph">#paragraph</a>
+    
+    <li><a href="#method-i-sign">#sign</a>
+    
+    <li><a href="#method-i-text">#text</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./index.html">Aozora</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Aozora</h1>
+
+  <div id="description" class="description">
+    
+<p>ダミーテキストを生成するためのクラスです。 青空文庫などの著作権フリーな文書をもとに整形された文字列を生成します。</p>
+<dl class="rdoc-list note-list"><dt>Authors
+<dd>
+<p>Tsukuru Tanimichi</p>
+</dd><dt>Version
+<dd>
+<p>0.1.0</p>
+</dd><dt>Copyright
+<dd>
+<p>MIT License</p>
+</dd><dt>License
+<dd>
+<p>2013 Tsukuru Tanimichi</p>
+</dd></dl>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="Titles">Titles
+        
+        <dd class="description"><p>テキストの種類として指定できるSymbolのリスト</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(title=:kokoro, length=100)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Aozoraクラスのインスタンスを生成する。</p>
+<dl class="rdoc-list label-list"><dt>title
+<dd>
+<p>使用するテキストの種類を設定する</p>
+</dd><dt>length
+<dd>
+<p>テキストの長さを設定する</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">title</span>=<span class="ruby-value">:kokoro</span>, <span class="ruby-identifier">length</span>=<span class="ruby-value">100</span>)
+  <span class="ruby-identifier">validate_tilte</span>(<span class="ruby-identifier">title</span>)
+  <span class="ruby-identifier">validate_length</span>(<span class="ruby-identifier">length</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">title</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">title</span> = <span class="ruby-constant">Titles</span>[<span class="ruby-identifier">title</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@text</span> = <span class="ruby-identifier">read_file</span>(<span class="ruby-identifier">title</span>, <span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-titles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">titles</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>テキストの種類として指定できるSymbolおよび番号の 対応表を標準出力に表示します。</p>
+          
+
+          
+          <div class="method-source-code" id="titles-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">titles</span>; <span class="ruby-identifier">print</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">_titles</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- titles-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- titles-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-alpha" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">alpha</span><span
+            class="method-args">(option)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>テキストに含まれるアルファベットを半角や全角に変換します。
+引数に:halfまたは“half”を渡すとテキスト内のすべてのアルファベットが半角に変換されます。
+:fullまたは“full”を渡すと全角に変換されます。</p>
+<dl class="rdoc-list label-list"><dt>option
+<dd>
+<p>オプションを指定します。:half, “half”, :full, “full” のうちいずれかを指定して下さい。</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="alpha-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">alpha</span>(<span class="ruby-identifier">option</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">option</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:half</span>, <span class="ruby-string">&quot;half&quot;</span>
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-string">&quot;ａ-ｚ&quot;</span>,<span class="ruby-string">&quot;a-z&quot;</span>)
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-string">&quot;Ａ-Ｚ&quot;</span>,<span class="ruby-string">&quot;A-Z&quot;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:full</span>, <span class="ruby-string">&quot;full&quot;</span>
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-string">&quot;a-z&quot;</span>,<span class="ruby-string">&quot;ａ-ｚ&quot;</span>)
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-string">&quot;A-Z&quot;</span>,<span class="ruby-string">&quot;Ａ-Ｚ&quot;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">'option must be :half, &quot;half&quot;, :full, or &quot;full&quot;'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- alpha-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- alpha-method -->
+
+    
+      <div id="method-i-digit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">digit</span><span
+            class="method-args">(option)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>テキストに含まれる数字を半角や全角に変換します。 引数に:halfまたは“half”を渡すとテキスト内のすべての数字が半角に変換されます。
+:fullまたは“full”を渡すと全角に変換されます。</p>
+<dl class="rdoc-list label-list"><dt>option
+<dd>
+<p>オプションを指定します。:half, “half”, :full, “full” のうちいずれかを指定して下さい。</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="digit-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">digit</span>(<span class="ruby-identifier">option</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">option</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:half</span>, <span class="ruby-string">&quot;half&quot;</span>
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-string">&quot;０-９&quot;</span>,<span class="ruby-string">&quot;0-9&quot;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:full</span>, <span class="ruby-string">&quot;full&quot;</span>
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-string">&quot;0-9&quot;</span>,<span class="ruby-string">&quot;０-９&quot;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">'option must be :half, &quot;half&quot;, :full, or &quot;full&quot;'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- digit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- digit-method -->
+
+    
+      <div id="method-i-dots" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dots</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>ダミーテキストの末尾に、文章の途中であることを示す「…」を付します。</p>
+          
+
+          
+          <div class="method-source-code" id="dots-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots</span>
+  <span class="ruby-ivar">@text</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;…&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dots-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dots-method -->
+
+    
+      <div id="method-i-paragraph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">paragraph</span><span
+            class="method-args">(p_length=40, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>テキストをパラグラフ化します。</p>
+<dl class="rdoc-list label-list"><dt>p_length
+<dd>
+<p>ひとつのパラグラフのおおまかな文字数を指定します。</p>
+</dd><dt>options
+<dd>
+<p>パラグラフに関するオプションをHashで受け取ります。 {:space_head =&gt; true}
+を渡された場合、パラグラフの冒頭にスペースが入ります。 {:_head =&gt; true} を渡された場合、パラグラフの冒頭にスペースが入ります。</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="paragraph-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">paragraph</span>(<span class="ruby-identifier">p_length</span>=<span class="ruby-value">40</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">div_paragraph</span>(<span class="ruby-identifier">p_length</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:space_head</span>]
+    <span class="ruby-ivar">@text</span> = <span class="ruby-string">&quot;　&quot;</span><span class="ruby-operator">+</span><span class="ruby-ivar">@text</span>
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\n/</span>,<span class="ruby-string">&quot;\n　&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:blank_line</span>]
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\n/</span>,<span class="ruby-string">&quot;\n\n&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- paragraph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- paragraph-method -->
+
+    
+      <div id="method-i-sign" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sign</span><span
+            class="method-args">(option)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>テキストに含まれる記号を半角や全角に変換します。 引数に:halfまたは“half”を渡すとテキスト内のすべての記号が半角に変換されます。
+:fullまたは“full”を渡すと全角に変換されます。</p>
+<dl class="rdoc-list label-list"><dt>option
+<dd>
+<p>オプションを指定します。:half, “half”, :full, “full” のうちいずれかを指定して下さい。</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="sign-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sign</span>(<span class="ruby-identifier">option</span>)
+  <span class="ruby-identifier">full_sign</span> = <span class="ruby-string">&quot;！＃＄％＆（）＊＋，ー．／：；＜＝＞？＠［］＾＿｀｛｜｝〜’＼&quot;</span>
+  <span class="ruby-identifier">half_sign</span> = <span class="ruby-node">&quot;!#\$%&amp;()*+,-./:;&lt;=&gt;?@[]^_`{|}~'\\&quot;</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">option</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:half</span>, <span class="ruby-string">&quot;half&quot;</span>
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-identifier">full_sign</span>, <span class="ruby-identifier">half_sign</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:full</span>, <span class="ruby-string">&quot;full&quot;</span>
+    <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-identifier">half_sign</span>, <span class="ruby-identifier">full_sign</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">'option must be :half, &quot;half&quot;, :full, or &quot;full&quot;'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sign-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sign-method -->
+
+    
+      <div id="method-i-text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">text</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><em><a href="index.html">Aozora</a></em><em><a
+href="index.html#method-i-to_s">#to_s</a></em>の別名です。
+生成されたダミーテキストを文字列として返します。</p>
+          
+
+          
+          <div class="method-source-code" id="text-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">text</span>; <span class="ruby-identifier">to_s</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- text-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- text-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>生成されたダミーテキストを文字列として返します。</p>
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/aozora/base.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>; <span class="ruby-ivar">@text</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
