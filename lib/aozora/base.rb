@@ -1,6 +1,17 @@
 # -*- coding: utf-8 -*-
 
+# 
+# ダミーテキストを生成するためのクラスです。
+# 青空文庫などの著作権フリーな文書をもとに整形された文字列を生成します。
+# 
+# Authors:: Tsukuru Tanimichi
+# Version:: 0.1.0
+# Copyright:: MIT License
+# License:: 2013 Tsukuru Tanimichi
+#
 class Aozora
+
+  # テキストの種類として指定できるSymbolのリスト
   Titles = lambda {
     titles = Array.new
     titles.push :kokoro
@@ -20,6 +31,12 @@ class Aozora
     return titles
   }.call
 
+  #
+  # Aozoraクラスのインスタンスを生成する。
+  #
+  # [title] 使用するテキストの種類を設定する
+  # [length] テキストの長さを設定する
+  #
   def initialize(title=:kokoro, length=100)
     validate_tilte(title)
     validate_length(length)
@@ -31,15 +48,25 @@ class Aozora
     return self
   end
 
+  #
+  # <i>Aozora</i><i>to_s</i>の別名です。
+  # 生成されたダミーテキストを文字列として返します。
+  #
   def text; to_s end
 
+  #
+  # テキストの種類として指定できるSymbolおよび番号の
+  # 対応表を標準出力に表示します。
+  #
   def self.titles; print self._titles end
 
-  def dots
-    @text += "…"
-    return self
-  end
-
+  #
+  # テキストに含まれるアルファベットを半角や全角に変換します。
+  # 引数に:halfまたは"half"を渡すとテキスト内のすべてのアルファベットが半角に変換されます。
+  # :fullまたは"full"を渡すと全角に変換されます。
+  # 
+  # [option] オプションを指定します。:half, "half", :full, "full" のうちいずれかを指定して下さい。
+  # 
   def alpha(option)
     case option
     when :half, "half"
@@ -54,6 +81,13 @@ class Aozora
     raise 'option must be :half, "half", :full, or "full"'
   end
 
+  #
+  # テキストに含まれる数字を半角や全角に変換します。
+  # 引数に:halfまたは"half"を渡すとテキスト内のすべての数字が半角に変換されます。
+  # :fullまたは"full"を渡すと全角に変換されます。
+  # 
+  # [option] オプションを指定します。:half, "half", :full, "full" のうちいずれかを指定して下さい。
+  # 
   def digit(option)
     case option
     when :half, "half"
@@ -66,6 +100,13 @@ class Aozora
     raise 'option must be :half, "half", :full, or "full"'
   end
 
+  #
+  # テキストに含まれる記号を半角や全角に変換します。
+  # 引数に:halfまたは"half"を渡すとテキスト内のすべての記号が半角に変換されます。
+  # :fullまたは"full"を渡すと全角に変換されます。
+  # 
+  # [option] オプションを指定します。:half, "half", :full, "full" のうちいずれかを指定して下さい。
+  # 
   def sign(option)
     full_sign = "！＃＄％＆（）＊＋，ー．／：；＜＝＞？＠［］＾＿｀｛｜｝〜’＼"
     half_sign = "!#\$%&()*+,-./:;<=>?@[]^_`{|}~'\\"
@@ -80,6 +121,14 @@ class Aozora
     raise 'option must be :half, "half", :full, or "full"'
   end
 
+  # 
+  # テキストをパラグラフ化します。
+  #
+  # [p_length] ひとつのパラグラフのおおまかな文字数を指定します。
+  # [options] パラグラフに関するオプションをHashで受け取ります。
+  #           {:space_head => true} を渡された場合、パラグラフの冒頭にスペースが入ります。
+  #           {:_head => true} を渡された場合、パラグラフの冒頭にスペースが入ります。
+  #
   def paragraph(p_length=40, options={})
     div_paragraph(p_length)
 
@@ -95,6 +144,17 @@ class Aozora
     return self
   end
 
+  #
+  # ダミーテキストの末尾に、文章の途中であることを示す「…」を付します。
+  #
+  def dots
+    @text += "…"
+    return self
+  end
+
+  #
+  # 生成されたダミーテキストを文字列として返します。
+  #
   def to_s; @text.to_s end
 
   private
