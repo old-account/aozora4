@@ -117,14 +117,16 @@ class Aozora
 
   def self._titles
     titles = String.new
+    titles += "+--+-------------------------+\n"
     titles += "| n| symbol                  |\n"
-    titles += "|--|-------------------------|\n"
+    titles += "+--+-------------------------+\n"
     # exclude __TEST_DATA__.txt
     (0..(Titles.size-2)).each do |i| 
       num_s = sprintf("%2d",i)
       sym_s = sprintf("%-25s",Titles[i].inspect)
       titles += "|#{num_s}|#{sym_s}|\n"
     end
+    titles += "+--+-------------------------+\n"
     return titles
   end
 
