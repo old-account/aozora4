@@ -71,9 +71,7 @@ Aozoraクラスには`to_s`が実装されており、呼び出されるとダ�
 
 ### その他の機能
 
-全角半角の変換やパラグラフの分割などができます。詳細はRDocをご覧ください。
-
-<em>{RDoc}[</em>https://dl.dropboxusercontent.com/u/67723753/AozoraRDoc/doc/index.html<em>]</em>
+全角半角の変換やパラグラフの分割などができます。詳細は[RDoc](https://dl.dropboxusercontent.com/u/67723753/AozoraRDoc/doc/index.html)をご覧ください。
 
 ## Installation
 
